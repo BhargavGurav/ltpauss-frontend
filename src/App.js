@@ -12,8 +12,7 @@ function App() {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        // "http://13.201.48.58:8000/rockblock/messages/",
-        "http://13.201.48.58:8000/rockblock/messages/",
+        "http://13.201.112.178:8000/rockblock/messages/",
         {
           method: "GET",
           headers: {
