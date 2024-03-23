@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/ltpauss-frontend/static/css/main.160b8b54.css",
+    "main.js": "/ltpauss-frontend/static/js/main.a002f5ba.js",
+    "static/js/453.45a14db4.chunk.js": "/ltpauss-frontend/static/js/453.45a14db4.chunk.js",
+    "static/media/dash-bg.svg": "/ltpauss-frontend/static/media/dash-bg.e2eee9608992bbbab33a.svg",
+    "static/media/btn.svg": "/ltpauss-frontend/static/media/btn.63f23d19228989628e673186afe2a692.svg",
+    "static/media/plot-bg.svg": "/ltpauss-frontend/static/media/plot-bg.a632a0690d621cc53c0d.svg",
+    "index.html": "/ltpauss-frontend/index.html",
+    "main.160b8b54.css.map": "/ltpauss-frontend/static/css/main.160b8b54.css.map",
+    "main.a002f5ba.js.map": "/ltpauss-frontend/static/js/main.a002f5ba.js.map",
+    "453.45a14db4.chunk.js.map": "/ltpauss-frontend/static/js/453.45a14db4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.160b8b54.css",
+    "static/js/main.a002f5ba.js"
+  ]
+}
