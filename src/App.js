@@ -3,6 +3,8 @@ import Plot from "react-plotly.js";
 import "./App.css";
 import btnSvg from "./btn.svg"; // Import your SVG image file
 import viewSvg from "./view-btn.svg"; // Import your SVG image file
+// import DataTable from "./DisplayTable";
+// import TableComponent from "./DisplayTableCSV";
 
 let previousMomsn = null; // Initialize previousMomsn outside the component
 
@@ -14,13 +16,21 @@ function App() {
   const [momsnStart, setMomsnStart] = useState(""); // Track the start momsn
   const [momsnEnd, setMomsnEnd] = useState(""); // Track the end momsn
   const [showInput, setShowInput] = useState(false); // Track if input should be shown
-
+  const [showTable,setshowTable]=useState(false);
   useEffect(() => {
     fetchLatestMessage(); // Fetch initial latest message
     const interval = setInterval(fetchLatestMessage, 5000); // Fetch latest message every 5 seconds
 
     return () => clearInterval(interval); // Cleanup interval on component unmount
   }, []);
+
+  // const DisplayTable=()=>{
+  //   setshowTable(true);
+  //   console.log("clicked successfully");
+  //   const hideContent=document.getElementsByClassName(input-container)
+  //   // <DataTable/>
+  //   <TableComponent/>
+  // }
 
   const fetchLatestMessage = async () => {
     try {
@@ -58,6 +68,7 @@ function App() {
           body: JSON.stringify(data),
         }
       );
+      console.log(response);
 
       if (!response.ok) {
         throw new Error("Failed to fetch data from the server");
@@ -85,8 +96,11 @@ function App() {
   };
 
   const handleInputSubmit = () => {
-    setShowInput(false);
-    fetchData(); // Call fetchData function when input is submitted
+      setShowInput(false);
+      fetchData(); // Call fetchData function when input is submitted
+      setMomsnStart(null)
+      setMomsnEnd(null)
+    
   };
 
   function transposeMatrix(matrix) {
@@ -95,19 +109,31 @@ function App() {
 
   return (
     <div className="container">
+      <div 
+        className="overlay-top-right" 
+        // onClick={DisplayTable}
+      />
       {showInput ? (
         <div className="input-container">
           <input
             type="text"
             placeholder="Enter momsn start"
             value={momsnStart}
-            onChange={(e) => setMomsnStart(e.target.value)}
+            onChange={(e) => {
+              const value=e.target.value;
+              const sanitizedvalue =value.replace(/[a-zA-Z]/g,"");
+                setMomsnStart(sanitizedvalue)}
+            }
           />
           <input
             type="text"
             placeholder="Enter momsn end"
             value={momsnEnd}
-            onChange={(e) => setMomsnEnd(e.target.value)}
+            onChange={(e) => {
+              const value=e.target.value;
+              const sanitizedvalue=value.replace(/[a-zA-Z]/g,"");
+              setMomsnEnd(sanitizedvalue)}
+            }
           />
           <img
             src={viewSvg}

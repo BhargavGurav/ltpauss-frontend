@@ -9,6 +9,16 @@ body {
   background-size: cover;
 }
 
+.overlay-top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 55px;
+  /* Set background color to make it visible during development */
+  background-color: rgba(255, 255, 255, 0); /* Transparent */
+}
+
 .container {
   max-width: 1200px;
   margin: 30px auto;
@@ -106,6 +116,10 @@ img {
   color: #fff;
 }
 
+.input-container input:focus{
+  border: none;
+  outline: none;
+}
 .input-container input::placeholder {
   color: #fff;
   /* Placeholder color */
