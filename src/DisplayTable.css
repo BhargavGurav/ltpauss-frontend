@@ -1,0 +1,25 @@
+*{
+    color: #fff;
+}
+table{
+   width: 45rem;
+   border: none;
+}
+thead tr th {
+    border-bottom: 1px solid #fff;
+    background-color: none;
+}
+h2{text-align: center;}
+th{
+    width: 100px;
+    background-color: none;
+}
+tr{justify-content: space-between;}
+td{
+    text-align: center;
+    padding: 6px 0px;
+}
+tbody{
+tr:nth-child(odd) { background-color: #0000802e; }
+tr:nth-child(even) {background-color: hsla(180, 100%, 94%, 0.203);}
+}
